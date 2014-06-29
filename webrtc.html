@@ -1,0 +1,50 @@
+<script src="//www.rtcmulticonnection.org/latest.js"></script>
+<button id="screenShare">Share Screen</button>
+<button id="videoShare">Share Video</button>
+<script>
+var connectId = window.location.hash;
+//console.log('ID', connectId);
+var connection = new RTCMultiConnection();
+
+// easiest way to customize what you need!
+connection.session = {
+    audio: true,
+    video: true
+//    data: true,
+    //screen: true
+};
+
+// on getting local or remote media stream
+connection.onstream = function(e) {
+    document.body.appendChild(e.mediaElement);
+};
+
+// setup signaling channel
+connection.connect();
+
+// open new session
+document.querySelector('#videoShare').onclick = function() {
+    connection.open();
+};
+/*
+var videoConnection = new RTCMultiConnection();
+videoConnection.onstream = function(e) {
+    document.body.appendChild(e.mediaElement);
+};
+videoConnection.session = {
+    audio: true,
+    video: true
+};
+//videoConnection.connect();
+
+*/
+document.querySelector('#screenShare').onclick = function() {
+connection.session = {
+    //audio: true,
+    //video: true
+//    data: true,
+    screen: true
+};
+connection.open();
+};
+</script>
