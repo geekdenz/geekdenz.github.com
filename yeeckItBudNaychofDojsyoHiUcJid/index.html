@@ -1,7 +1,11 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kimono - Photography Agency</title><style>* {
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Happy Birthday</title><style>* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        .hidden {
+            display: none;
         }
 
         body {
@@ -517,51 +521,1094 @@
 }
 .img-modal-close:hover {
   background: rgba(0,0,0,0.9);
-}</style><script defer="defer" src="./js/app.js"></script></head><body><nav class="navbar"><div class="nav-container"><a href="#" class="logo">40 Years! And you've got this!</a><ul class="nav-menu"><li><a href="#home">Home</a></li><li><a href="#gallery">Gallery</a></li></ul></div></nav><section class="hero" id="home"><div class="hero-content"><img src="img/photos/heart_with_hands.jpg" alt="heart with hands" class="gallery-item"><h1>Our Dear Patricia,</h1><h1><span>Happy Birthday!</span></h1><p>We love you and wish to celebrate many more occasions with you!</p><a href="#gallery" class="cta-button">Explore Your Gallery</a></div></section><section class="gallery" id="gallery"><div class="container"><div class="section-header"><h2 class="section-title">Some of Your Memories</h2><p class="section-subtitle">Have a blast from the past with important milestones that we collected for you.</p></div><div class="gallery-grid"><div class="gallery-item"><img src="img/photos/20200622_154620.jpg" alt="Gallery Image 1"></div><div class="gallery-item"><img src="img/photos/20211019_191953.jpg" alt="Gallery Image 1"></div><div class="gallery-item"><img src="img/photos/20200622_154620.jpg" alt="20200622_154620"/></div><div class="gallery-item"><img src="img/photos/20200622_154620.jpg" alt="20200622_154620"/></div><div class="gallery-item"><img src="img/photos/20211019_191953.jpg" alt="20211019_191953"/></div><div class="gallery-item"><img src="img/photos/20250102_191149.jpg" alt="20250102_191149"/></div><div class="gallery-item"><img src="img/photos/20250105_115958.jpg" alt="Photo taken January 5, 2025"></div><div class="gallery-item"><img src="img/photos/20250118_110738.jpg" alt="Photo taken January 18, 2025"></div><div class="gallery-item"><img src="img/photos/20250119_130708.jpg" alt="Photo taken January 19, 2025"></div><div class="gallery-item"><img src="img/photos/20250120_132700.jpg" alt="Photo taken January 20, 2025"></div><div class="gallery-item"><img src="img/photos/20250209_144605.jpg" alt="Photo taken February 9, 2025"></div><div class="gallery-item"><img src="img/photos/20250510_160813.jpg" alt="Photo taken May 10, 2025"></div><div class="gallery-item"><img src="img/photos/20250511_151652.jpg" alt="Photo taken May 11, 2025"></div><div class="gallery-item"><img src="img/photos/20250601_124126.jpg" alt="Photo taken June 1, 2025"></div><div class="gallery-item"><img src="img/photos/VideoCapture_20250809-153707.jpg" alt="Video capture from August 9, 2025"></div></div></div></section><footer class="footer"><div class="container"><p>&copy; 2025 Various Artists.</p></div></footer><script>// Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+}
 
-        // Navbar background change on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-            } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.boxShadow = 'none';
+
+/* Audio Player */
+        /*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+        /* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+        /*
+         * What follows is the result of much research on cross-browser styling.
+         * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+         * Kroc Camen, and the H5BP dev community and team.
+         */
+
+        /* ==========================================================================
+           Base styles: opinionated defaults
+           ========================================================================== */
+
+        html {
+          color: #222;
+          font-size: 1em;
+          line-height: 1.4;
+        }
+
+        /*
+         * Remove text-shadow in selection highlight:
+         * https://twitter.com/miketaylr/status/12228805301
+         *
+         * Customize the background color to match your design.
+         */
+
+        ::-moz-selection {
+          background: #b3d4fc;
+          text-shadow: none;
+        }
+
+        ::selection {
+          background: #b3d4fc;
+          text-shadow: none;
+        }
+
+        /*
+         * A better looking default horizontal rule
+         */
+
+        hr {
+          display: block;
+          height: 1px;
+          border: 0;
+          border-top: 1px solid #ccc;
+          margin: 1em 0;
+          padding: 0;
+        }
+
+        /*
+         * Remove the gap between audio, canvas, iframes,
+         * images, videos and the bottom of their containers:
+         * https://github.com/h5bp/html5-boilerplate/issues/440
+         */
+
+        audio,
+        canvas,
+        iframe,
+        img,
+        svg,
+        video {
+          vertical-align: middle;
+        }
+
+        /*
+         * Remove default fieldset styles.
+         */
+
+        fieldset {
+          border: 0;
+          margin: 0;
+          padding: 0;
+        }
+
+        /*
+         * Allow only vertical resizing of textareas.
+         */
+
+        textarea {
+          resize: vertical;
+        }
+
+        /* ==========================================================================
+           Author's custom styles
+           ========================================================================== */
+
+        /* ==========================================================================
+           Helper classes
+           ========================================================================== */
+
+        /*
+         * Hide visually and from screen readers
+         */
+
+        .hidden,
+        [hidden] {
+          display: none !important;
+        }
+
+        /*
+         * Hide only visually, but have it available for screen readers:
+         * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+         *
+         * 1. For long content, line feeds are not interpreted as spaces and small width
+         *    causes content to wrap 1 word per line:
+         *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+         */
+
+        .visually-hidden {
+          border: 0;
+          clip: rect(0, 0, 0, 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          white-space: nowrap;
+          width: 1px;
+          /* 1 */
+        }
+
+        /*
+         * Extends the .visually-hidden class to allow the element
+         * to be focusable when navigated to via the keyboard:
+         * https://www.drupal.org/node/897638
+         */
+
+        .visually-hidden.focusable:active,
+        .visually-hidden.focusable:focus {
+          clip: auto;
+          height: auto;
+          margin: 0;
+          overflow: visible;
+          position: static;
+          white-space: inherit;
+          width: auto;
+        }
+
+        /*
+         * Hide visually and from screen readers, but maintain layout
+         */
+
+        .invisible {
+          visibility: hidden;
+        }
+
+        /*
+         * Clearfix: contain floats
+         *
+         * The use of `table` rather than `block` is only necessary if using
+         * `::before` to contain the top-margins of child elements.
+         */
+
+        .clearfix::before,
+        .clearfix::after {
+          content: "";
+          display: table;
+        }
+
+        .clearfix::after {
+          clear: both;
+        }
+
+        /* ==========================================================================
+           EXAMPLE Media Queries for Responsive Design.
+           These examples override the primary ('mobile first') styles.
+           Modify as content requires.
+           ========================================================================== */
+
+        @media only screen and (min-width: 35em) {
+          /* Style adjustments for viewports that meet the condition */
+          #home {
+            background-image: url("img/photos/20211019_191953_blurred_grayscale.jpg");
+          }
+        }
+
+        @media print,
+        (-webkit-min-device-pixel-ratio: 1.25),
+        (min-resolution: 1.25dppx),
+        (min-resolution: 120dpi) {
+          /* Style adjustments for high resolution devices */
+        }
+
+        /* ==========================================================================
+           Print styles.
+           Inlined to avoid the additional HTTP request:
+           https://www.phpied.com/delay-loading-your-print-css/
+           ========================================================================== */
+
+        @media print {
+          *,
+          *::before,
+          *::after {
+            background: #fff !important;
+            color: #000 !important;
+            /* Black prints faster */
+            box-shadow: none !important;
+            text-shadow: none !important;
+          }
+
+          a,
+          a:visited {
+            text-decoration: underline;
+          }
+
+          a[href]::after {
+            content: " (" attr(href) ")";
+          }
+
+          abbr[title]::after {
+            content: " (" attr(title) ")";
+          }
+
+          /*
+           * Don't show links that are fragment identifiers,
+           * or use the `javascript:` pseudo protocol
+           */
+          a[href^="#"]::after,
+          a[href^="javascript:"]::after {
+            content: "";
+          }
+
+          pre {
+            white-space: pre-wrap !important;
+          }
+
+          pre,
+          blockquote {
+            border: 1px solid #999;
+            page-break-inside: avoid;
+          }
+
+          tr,
+          img {
+            page-break-inside: avoid;
+          }
+
+          p,
+          h2,
+          h3 {
+            orphans: 3;
+            widows: 3;
+          }
+
+          h2,
+          h3 {
+            page-break-after: avoid;
+          }
+        }
+
+        /* Modal overlay */
+        .img-modal-overlay {
+          position: fixed;
+          inset: 0;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          background: rgba(0, 0, 0, 0.65);
+          z-index: 9999;
+          padding: 2rem;
+        }
+        .img-modal-overlay.open {
+          display: flex;
+        }
+
+        /* Modal dialog */
+        .img-modal-dialog {
+          position: relative;
+          max-width: 90vw;
+          max-height: 90vh;
+          outline: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        /* Modal image - ensures it shrinks to fit */
+        .img-modal-img {
+          display: block;
+          max-width: 100%;
+          max-height: 90vh;
+          width: auto;
+          height: auto;
+          object-fit: contain;
+          border-radius: 8px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Close button */
+        .img-modal-close {
+          position: absolute;
+          top: -12px;
+          right: -12px;
+          width: 40px;
+          height: 40px;
+          border: none;
+          border-radius: 999px;
+          background: rgba(0,0,0,0.75);
+          color: #fff;
+          font-size: 24px;
+          line-height: 40px;
+          cursor: pointer;
+          z-index: 3;
+        }
+        .img-modal-close:hover {
+          background: rgba(0,0,0,0.9);
+        }
+
+        /* Navigation arrows - positioned to the sides of the image */
+        .img-modal-nav {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 50px;
+          height: 50px;
+          border: none;
+          border-radius: 50%;
+          background: rgba(0,0,0,0.75);
+          color: #fff;
+          font-size: 24px;
+          font-weight: bold;
+          cursor: pointer;
+          z-index: 2;
+          transition: all 0.3s ease;
+        }
+
+        .img-modal-prev {
+          left: -70px; /* Further left from the image */
+        }
+
+        .img-modal-next {
+          right: -70px; /* Further right from the image */
+        }
+
+        .img-modal-nav:hover {
+          background: rgba(0,0,0,0.9);
+          transform: translateY(-50%) scale(1.1);
+        }
+
+        .img-modal-nav:disabled,
+        .img-modal-nav[style*="none"] {
+          opacity: 0.3;
+          cursor: not-allowed;
+        }
+
+        /* Gallery container */
+        .gallery {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+          padding: 20px;
+        }
+
+        /* Gallery items */
+        .gallery-item {
+          height: 300px;
+          background: linear-gradient(45deg, #222 0%, #ddd 100%);
+          border-radius: 15px;
+          position: relative;
+          overflow: hidden;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Images inside gallery items */
+        .gallery-item img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+          transform: scale(1.05);
+        }
+
+        /* Responsive navigation */
+        @media (max-width: 768px) {
+          .gallery {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 15px;
+          }
+
+          .gallery-item {
+            height: 250px;
+          }
+
+          .img-modal-nav {
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+          }
+
+          .img-modal-prev {
+            left: -50px; /* Closer on mobile due to less space */
+          }
+
+          .img-modal-next {
+            right: -50px;
+          }
+        }
+
+        /* For very small screens, bring buttons closer */
+        @media (max-width: 480px) {
+          .img-modal-prev {
+            left: 10px;
+          }
+
+          .img-modal-next {
+            right: 10px;
+          }
+        }
+
+        /*
+         ENHANCED AUDIO PLAYER
+         */
+
+        /* Audio Player Banner */
+        .audio-player-banner {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #667eea 100%);
+          color: white;
+          padding: 20px;
+          z-index: 1001;
+          box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+          backdrop-filter: blur(20px);
+          border-bottom: 1px solid rgba(255,255,255,0.1);
+          display: none;
+          animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+          from {
+            transform: translateY(-100%);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+
+        .audio-player-banner.active {
+          display: block;
+        }
+
+        .player-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          gap: 30px;
+        }
+
+        .player-controls {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .control-btn {
+          background: rgba(255, 255, 255, 0.15);
+          border: 2px solid rgba(255, 255, 255, 0.2);
+          color: white;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          cursor: pointer;
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          backdrop-filter: blur(10px);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .control-btn::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 50%;
+          transition: all 0.3s ease;
+          transform: translate(-50%, -50%);
+        }
+
+        .control-btn:hover::before {
+          width: 100%;
+          height: 100%;
+        }
+
+        .control-btn:hover {
+          background: rgba(255, 255, 255, 0.25);
+          border-color: rgba(255, 255, 255, 0.4);
+          transform: scale(1.1);
+          box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .control-btn:active {
+          transform: scale(0.95);
+        }
+
+        .control-btn.play-pause {
+          width: 60px;
+          height: 60px;
+          font-size: 22px;
+          background: rgba(255, 255, 255, 0.2);
+          border: 3px solid rgba(255, 255, 255, 0.3);
+          box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .control-btn.play-pause:hover {
+          background: rgba(255, 255, 255, 0.3);
+          transform: scale(1.15);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+
+        .track-info {
+          flex: 1;
+          min-width: 200px;
+          margin-left: 10px;
+        }
+
+        .track-title {
+          font-size: 16px;
+          font-weight: 700;
+          margin-bottom: 6px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: #ffffff;
+          text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+          letter-spacing: 0.5px;
+        }
+
+        .track-artist {
+          font-size: 13px;
+          opacity: 0.85;
+          color: rgba(255,255,255,0.8);
+          font-weight: 400;
+          letter-spacing: 0.3px;
+        }
+
+        .progress-container {
+          flex: 2;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          min-width: 250px;
+        }
+
+        .time-display {
+          font-size: 13px;
+          font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+          font-weight: 500;
+          min-width: 45px;
+          color: rgba(255,255,255,0.9);
+          text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .progress-bar {
+          flex: 1;
+          height: 8px;
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 10px;
+          position: relative;
+          cursor: pointer;
+          overflow: hidden;
+          backdrop-filter: blur(5px);
+          border: 1px solid rgba(255,255,255,0.1);
+          transition: all 0.3s ease;
+        }
+
+        .progress-bar:hover {
+          background: rgba(255, 255, 255, 0.25);
+          transform: scaleY(1.2);
+          box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .progress-fill {
+          height: 100%;
+          background: linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0.9) 100%);
+          border-radius: 10px;
+          width: 0%;
+          transition: width 0.1s ease;
+          position: relative;
+          box-shadow: 0 0 10px rgba(255,255,255,0.3);
+        }
+
+        .progress-fill::after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 12px;
+          height: 12px;
+          background: #ffffff;
+          border-radius: 50%;
+          transform: translateY(-50%);
+          box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .progress-bar:hover .progress-fill::after {
+          opacity: 1;
+        }
+
+        .volume-container {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-left: 10px;
+        }
+
+        .volume-slider {
+          width: 90px;
+          height: 6px;
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 10px;
+          outline: none;
+          cursor: pointer;
+          -webkit-appearance: none;
+          appearance: none;
+          backdrop-filter: blur(5px);
+          border: 1px solid rgba(255,255,255,0.1);
+          transition: all 0.3s ease;
+        }
+
+        .volume-slider:hover {
+          background: rgba(255, 255, 255, 0.25);
+          transform: scaleY(1.3);
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #ffffff, rgba(255,255,255,0.9));
+          cursor: pointer;
+          border: 2px solid rgba(255,255,255,0.3);
+          box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+          transition: all 0.3s ease;
+        }
+
+        .volume-slider::-webkit-slider-thumb:hover {
+          background: #ffffff;
+          transform: scale(1.2);
+          box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+
+        .volume-slider::-moz-range-thumb {
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #ffffff, rgba(255,255,255,0.9));
+          cursor: pointer;
+          border: 2px solid rgba(255,255,255,0.3);
+          box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+          transition: all 0.3s ease;
+        }
+
+        /* Click to start message */
+        #audioStatus {
+          background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+          padding: 25px;
+          text-align: center;
+          margin: 20px;
+          margin-top: 100px;
+          border: 1px solid rgba(102, 126, 234, 0.3);
+          border-radius: 15px;
+          box-shadow: 0 8px 32px rgba(102, 126, 234, 0.2);
+          backdrop-filter: blur(20px);
+          color: #2a5298;
+          font-weight: 500;
+          position: relative;
+          overflow: hidden;
+        }
+
+        #audioStatus::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+          transition: left 0.6s ease;
+        }
+
+        #audioStatus:hover::before {
+          left: 100%;
+        }
+
+        /* Adjust navbar when audio player is active */
+        .navbar.with-audio-player {
+          top: 90px;
+          transition: top 0.5s ease;
+        }
+
+        /* Enhanced Responsive Design */
+        @media (max-width: 1024px) {
+          .player-container {
+            gap: 20px;
+          }
+
+          .progress-container {
+            min-width: 200px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .audio-player-banner {
+            padding: 15px;
+          }
+
+          .player-container {
+            flex-wrap: wrap;
+            gap: 15px;
+          }
+
+          .progress-container {
+            order: 3;
+            flex-basis: 100%;
+            margin-top: 15px;
+          }
+
+          .track-info {
+            min-width: 150px;
+            margin-left: 0;
+          }
+
+          .volume-container {
+            margin-left: 0;
+          }
+
+          .control-btn {
+            width: 44px;
+            height: 44px;
+            font-size: 16px;
+          }
+
+          .control-btn.play-pause {
+            width: 54px;
+            height: 54px;
+            font-size: 20px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .volume-container {
+            display: none;
+          }
+
+          .track-title {
+            font-size: 14px;
+          }
+
+          .track-artist {
+            font-size: 12px;
+          }
+
+          .time-display {
+            font-size: 12px;
+            min-width: 40px;
+          }
+
+          .progress-bar {
+            height: 10px;
+          }
+        }
+
+        /* Accessibility improvements */
+        .control-btn:focus {
+          outline: 3px solid rgba(255,255,255,0.5);
+          outline-offset: 2px;
+        }
+
+        .progress-bar:focus-within {
+          outline: 2px solid rgba(255,255,255,0.5);
+          outline-offset: 2px;
+        }
+
+        .volume-slider:focus {
+          outline: 2px solid rgba(255,255,255,0.5);
+          outline-offset: 2px;
+        }
+
+        /* Smooth animations */
+        * {
+          -webkit-tap-highlight-color: transparent;
+        }
+
+        .audio-player-banner * {
+          will-change: transform;
+        }</style><script defer="defer" src="./js/app.js"></script></head><body><audio id="audioPlayer" preload="none"></audio><nav class="navbar"><div class="nav-container"><a href="#" class="logo">40 Years! And you've got this!</a><ul class="nav-menu"><li><a href="#home">Home</a></li><li><a href="#gallery">Gallery</a></li></ul></div></nav><section class="hero" id="home"><div class="hero-content"><img src="img/photos/heart_with_hands.jpg" alt="heart with hands" class="gallery-item"><h1>Our Dear Patricia,</h1><h1><span>Happy Birthday!</span></h1><p>We love you and wish to celebrate many more occasions with you!</p><a href="#gallery" class="cta-button">Explore Your Gallery</a></div></section><section class="gallery" id="gallery"><div class="container"><div class="section-header"><h2 class="section-title">Some of Your Memories</h2><p class="section-subtitle">Have a blast from the past with important milestones that we collected for you.</p></div><div class="gallery-grid"><div class="gallery-item"><img src="img/photos/20200622_154620.jpg" alt="20200622_154620"></div><div class="gallery-item"><img src="img/photos/20211019_191953.jpg" alt="20211019_191953"></div><div class="gallery-item"><img src="img/photos/20240310_164653.jpg" alt="20240310_164653"></div><div class="gallery-item"><img src="img/photos/20240511_154136.jpg" alt="20240511_154136"></div><div class="gallery-item"><img src="img/photos/20240512_101057.jpg" alt="20240512_101057"></div><div class="gallery-item"><img src="img/photos/20240714_194509.jpg" alt="20240714_194509"></div><div class="gallery-item"><img src="img/photos/20240731_193351.jpg" alt="20240731_193351"></div><div class="gallery-item"><img src="img/photos/20240802_160642.jpg" alt="20240802_160642"></div><div class="gallery-item"><img src="img/photos/20240804_130500.jpg" alt="20240804_130500"></div><div class="gallery-item"><img src="img/photos/20240921_144149.jpg" alt="20240921_144149"></div><div class="gallery-item"><img src="img/photos/20241116_123447.jpg" alt="20241116_123447"></div><div class="gallery-item"><img src="img/photos/20241116_123514.jpg" alt="20241116_123514"></div><div class="gallery-item"><img src="img/photos/20241116_123520.jpg" alt="20241116_123520"></div><div class="gallery-item"><img src="img/photos/20250102_191149.jpg" alt="20250102_191149"></div><div class="gallery-item"><img src="img/photos/20250105_115958.jpg" alt="20250105_115958"></div><div class="gallery-item"><img src="img/photos/20250118_110738.jpg" alt="20250118_110738"></div><div class="gallery-item"><img src="img/photos/20250119_130708.jpg" alt="20250119_130708"></div><div class="gallery-item"><img src="img/photos/20250120_132700.jpg" alt="20250120_132700"></div><div class="gallery-item"><img src="img/photos/20250209_144605.jpg" alt="20250209_144605"></div><div class="gallery-item"><img src="img/photos/20250222_162515.jpg" alt="20250222_162515"></div><div class="gallery-item"><img src="img/photos/20250223_123850.jpg" alt="20250223_123850"></div><div class="gallery-item"><img src="img/photos/20250510_160813.jpg" alt="20250510_160813"></div><div class="gallery-item"><img src="img/photos/20250511_151652.jpg" alt="20250511_151652"></div><div class="gallery-item"><img src="img/photos/20250511_152019~2.jpg" alt="20250511_152019~2"></div><div class="gallery-item"><img src="img/photos/20250525_170513.jpg" alt="20250525_170513"></div><div class="gallery-item"><img src="img/photos/20250601_124126.jpg" alt="20250601_124126"></div><div class="gallery-item"><img src="img/photos/20250719_125039.jpg" alt="20250719_125039"></div><div class="gallery-item"><img src="img/photos/IMG_20240619_170700839.jpg" alt="IMG_20240619_170700839"></div><div class="gallery-item"><img src="img/photos/VideoCapture_20250809-153707.jpg" alt="VideoCapture_20250809-153707"></div></div></div></section><footer class="footer"><div class="container"><p>&copy; 2025 Various Artists.</p></div></footer><div class="audio-player-banner" id="audioPlayerBanner"><div class="player-container"><div class="player-controls"><button class="control-btn" onclick="previousTrack()" title="Previous Track">⏮️</button> <button class="control-btn play-pause" onclick="togglePlayback()" id="playPauseBtn" title="Play/Pause">▶️</button> <button class="control-btn" onclick="nextTrack()" title="Next Track">⏭️</button></div><div class="track-info"><div class="track-title" id="trackTitle">Click to start playlist</div><div class="track-artist" id="trackArtist">Sandy & Junior</div></div><div class="progress-container"><span class="time-display" id="currentTime">0:00</span><div class="progress-bar" onclick="seekTo(event)"><div class="progress-fill" id="progressFill"></div></div><span class="time-display" id="totalTime">0:00</span></div><div class="volume-container"><button class="control-btn" onclick="toggleMute()" id="muteBtn" title="Mute/Unmute">🔊</button> <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50" onchange="setVolume(this.value)"></div></div><div class="container"><div id="audioStatus"><strong>🎵 Click anywhere to start playing Sandy & Junior playlist!</strong><br><small>The player controls will appear at the top of the page</small></div></div></div><script>// Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+              const target = document.querySelector(this.getAttribute('href'));
+              if (target) {
+                  target.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start'
+                  });
+              }
+          });
+      });
+
+      // Navbar background change on scroll
+      window.addEventListener('scroll', function() {
+          const navbar = document.querySelector('.navbar');
+          if (window.scrollY > 50) {
+              navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+              navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+          } else {
+              navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+              navbar.style.boxShadow = 'none';
+          }
+      });
+
+      // Add scroll animations
+      const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.style.opacity = '1';
+                  entry.target.style.transform = 'translateY(0)';
+              }
+          });
+      }, observerOptions);
+
+      // Observe all service cards and team members
+      document.querySelectorAll('.service-card, .team-member, .gallery-item').forEach(el => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(30px)';
+          el.style.transition = 'all 0.6s ease';
+          observer.observe(el);
+      });
+
+
+      // AUDIO
+
+      // Audio playlist
+      const audioFiles = [
+        "audio/01-Sandy & Junior-El Amor No Fallará (Love Never Fails).m4a",
+        "audio/02-Sandy & Junior-Convence Al Corazón (Words Are Not Enough).m4a",
+        "audio/03-Sandy & Junior-Tan Dentro de Tí (Whenever You Close Your Eyes).m4a",
+        "audio/04-Sandy & Junior-Muy Cerca de Tí (When You Need Somebody).m4a",
+        "audio/05-Sandy & Junior-La Leyenda (A Lenda).m4a",
+        "audio/06-Sandy & Junior-Right Thing To Do.m4a",
+        "audio/07-Sandy & Junior-Don't Say You Love Me.m4a",
+        "audio/08-Sandy & Junior-Precious Time.m4a",
+        "audio/09-Sandy & Junior-Must Be Magic.m4a",
+        "audio/10-Sandy & Junior-Wanna Be Where You Are.m4a",
+        "audio/11-Sandy & Junior-We've Only Just Begun.m4a",
+        "audio/12-Sandy & Junior-Don't Run Away With My Heart.m4a",
+        "audio/13-Sandy & Junior-Until I See You Again.m4a",
+        "audio/14-Sandy & Junior-This Is Me.m4a",
+        "audio/15-Sandy & Junior-El Amor No Fallará (Love Never Fails) (Spanish Fly Radio Edit).m4a"
+      ];
+
+      let currentTrackIndex = 0;
+      let audioPlayer = null;
+      let hasStarted = false;
+      let isLooping = true;
+      let isPlaying = false;
+      let isMuted = false;
+
+      // Initialize when page loads
+      document.addEventListener('DOMContentLoaded', function() {
+        setupAudioPlayer();
+      });
+
+      function setupAudioPlayer() {
+        audioPlayer = document.getElementById('audioPlayer');
+          audioPlayer.volume = 0.5; // Set initial volume to 50%
+
+          // Audio event listeners
+          audioPlayer.addEventListener('ended', function() {
+            console.log('Track ended, playing next...');
+            nextTrack();
+          });
+
+          audioPlayer.addEventListener('error', function(e) {
+            console.error('Audio error:', e);
+            nextTrack();
+          });
+
+          audioPlayer.addEventListener('loadstart', function() {
+            updateTrackDisplay();
+          });
+
+          audioPlayer.addEventListener('play', function() {
+            isPlaying = true;
+            document.getElementById('playPauseBtn').textContent = '⏸️';
+          });
+
+          audioPlayer.addEventListener('pause', function() {
+            isPlaying = false;
+            document.getElementById('playPauseBtn').textContent = '▶️';
+          });
+
+          // Progress bar updates
+          audioPlayer.addEventListener('timeupdate', function() {
+            updateProgressBar();
+          });
+
+          audioPlayer.addEventListener('loadedmetadata', function() {
+            updateTotalTime();
+          });
+
+          // Listen for user interaction to start audio
+          document.addEventListener('click', function() {
+            if (!hasStarted) {
+              startAudioPlayback();
+              hasStarted = true;
             }
-        });
+          }, { once: true });
+        }
 
-        // Add scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        function startAudioPlayback() {
+          console.log('Starting audio playback...');
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+          // Show player banner
+          const audioPlayerElement = document.getElementById('audioPlayerBanner');
+          audioPlayerElement.classList.add('active');
+
+          // Update UI
+          document.getElementById('audioStatus').innerHTML =
+            '<strong>🎵 Sandy & Junior playlist started!</strong><br>' +
+            '<small>Use the player controls at the top of the page</small>';
+
+          // Load and play first track
+          loadAndPlayTrack(currentTrackIndex);
+
+          const height = audioPlayerElement.getClientRects()[0].height;
+          const body = document.body;
+          body.style.marginBottom = height + 'px';
+        }
+
+        function loadAndPlayTrack(index) {
+          if (index < 0 || index >= audioFiles.length) {
+            if (isLooping) {
+              currentTrackIndex = index < 0 ? audioFiles.length - 1 : 0;
+            } else {
+              console.log('Playlist finished');
+              return;
+            }
+          } else {
+            currentTrackIndex = index;
+          }
+
+          const audioFile = audioFiles[currentTrackIndex];
+          console.log(`Loading track ${currentTrackIndex + 1}: ${audioFile}`);
+
+          audioPlayer.src = `https://github.com/geekdenz/geekdenz.github.com/raw/refs/heads/gh-pages/yeeckItBudNaychofDojsyoHiUcJid/${audioFile}`;
+
+          audioPlayer.load();
+
+          setTimeout(() => {
+            audioPlayer.play().then(() => {
+              console.log(`Playing: ${audioFile}`);
+            }).catch(error => {
+              console.error('Error playing audio:', error);
+              nextTrack();
             });
-        }, observerOptions);
+          }, 100);
 
-        // Observe all service cards and team members
-        document.querySelectorAll('.service-card, .team-member, .gallery-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });</script><script src="js/app.js"></script></body></html>
+          updateTrackDisplay();
+        }
+
+        function updateTrackDisplay() {
+          const trackName = audioFiles[currentTrackIndex].split('/').pop().replace('.m4a', '').replace(/^\d+-/, '');
+          document.getElementById('trackTitle').textContent = trackName;
+          document.getElementById('trackArtist').textContent = `Track ${currentTrackIndex + 1} of ${audioFiles.length}`;
+        }
+
+        function updateProgressBar() {
+          if (audioPlayer.duration) {
+            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('currentTime').textContent = formatTime(audioPlayer.currentTime);
+          }
+        }
+
+        function updateTotalTime() {
+          if (audioPlayer.duration) {
+            document.getElementById('totalTime').textContent = formatTime(audioPlayer.duration);
+          }
+        }
+
+        function formatTime(seconds) {
+          const mins = Math.floor(seconds / 60);
+          const secs = Math.floor(seconds % 60);
+          return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function seekTo(event) {
+          if (!audioPlayer.duration) return;
+
+          const progressBar = event.currentTarget;
+          const rect = progressBar.getBoundingClientRect();
+          const clickX = event.clientX - rect.left;
+          const percentage = clickX / rect.width;
+          const newTime = percentage * audioPlayer.duration;
+
+          audioPlayer.currentTime = newTime;
+        }
+
+        function nextTrack() {
+          const nextIndex = currentTrackIndex + 1;
+          if (nextIndex >= audioFiles.length && isLooping) {
+            loadAndPlayTrack(0);
+          } else if (nextIndex < audioFiles.length) {
+            loadAndPlayTrack(nextIndex);
+          } else {
+            console.log('End of playlist reached');
+          }
+        }
+
+        function previousTrack() {
+          const prevIndex = currentTrackIndex - 1;
+          if (prevIndex < 0 && isLooping) {
+            loadAndPlayTrack(audioFiles.length - 1);
+          } else if (prevIndex >= 0) {
+            loadAndPlayTrack(prevIndex);
+          }
+        }
+
+        function togglePlayback() {
+          if (!audioPlayer) return;
+
+          if (isPlaying) {
+            audioPlayer.pause();
+          } else {
+            audioPlayer.play().catch(error => {
+              console.error('Error resuming playback:', error);
+            });
+          }
+        }
+
+        function setVolume(value) {
+        // console.log('Volume set to:', value, audioPlayer);
+          if (audioPlayer) {
+            audioPlayer.volume = value / 100;
+            if (value > 0 && isMuted) {
+              isMuted = false;
+              document.getElementById('muteBtn').textContent = '🔊';
+            }
+          }
+        }
+
+        function toggleMute() {
+          if (!audioPlayer) return;
+
+          if (isMuted) {
+            audioPlayer.volume = document.getElementById('volumeSlider').value / 100;
+            document.getElementById('muteBtn').textContent = '🔊';
+            isMuted = false;
+          } else {
+            audioPlayer.volume = 0;
+            document.getElementById('muteBtn').textContent = '🔇';
+            isMuted = true;
+          }
+        }</script><script src="js/app.js"></script></body></html>
