@@ -495,6 +495,17 @@
   outline: none;
 }
 
+/* Video Modal */
+.img-modal-video {
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Audio Player */
+
 /* Image */
 .img-modal-img {
   display: block;
@@ -1370,7 +1381,219 @@
           display: flex;
           justify-content: center;
           align-items: center;
-        }</style><script defer="defer" src="./js/app.js"></script></head><body><audio id="audioPlayer" preload="none"></audio><nav class="navbar"><div class="nav-container"><a href="#" class="logo">40 Years! And you've got this!</a><ul class="nav-menu"><li><a href="#home">Home</a></li><li><a href="#gallery">Gallery</a></li></ul></div></nav><section class="hero" id="home"><div class="hero-content"><img src="img/photos/heart_with_hands.jpg" alt="heart with hands" class="gallery-item"><h1>Our Dear Patricia,</h1><h1><span>Happy Birthday!</span></h1><p>We love you and wish to celebrate many more occasions with you!</p><a href="#gallery" class="cta-button">Explore Your Gallery</a></div></section><section class="gallery" id="gallery"><div class="container"><div class="section-header"><h2 class="section-title">Some of Your Memories</h2><p class="section-subtitle">Have a blast from the past with important milestones that we collected for you.</p></div><div class="gallery-grid"><div class="gallery-item"><img src="img/photos/20200622_154620.jpg" alt="20200622_154620"></div><div class="gallery-item"><img src="img/photos/20211019_191953.jpg" alt="20211019_191953"></div><div class="gallery-item"><img src="img/photos/20240310_164653.jpg" alt="20240310_164653"></div><div class="gallery-item"><img src="img/photos/20240511_154136.jpg" alt="20240511_154136"></div><div class="gallery-item"><img src="img/photos/20240512_101057.jpg" alt="20240512_101057"></div><div class="gallery-item"><img src="img/photos/20240714_194509.jpg" alt="20240714_194509"></div><div class="gallery-item"><img src="img/photos/20240731_193351.jpg" alt="20240731_193351"></div><div class="gallery-item"><img src="img/photos/20240802_160642.jpg" alt="20240802_160642"></div><div class="gallery-item"><img src="img/photos/20240804_130500.jpg" alt="20240804_130500"></div><div class="gallery-item"><img src="img/photos/20240921_144149.jpg" alt="20240921_144149"></div><div class="gallery-item"><img src="img/photos/20241116_123447.jpg" alt="20241116_123447"></div><div class="gallery-item"><img src="img/photos/20241116_123514.jpg" alt="20241116_123514"></div><div class="gallery-item"><img src="img/photos/20241116_123520.jpg" alt="20241116_123520"></div><div class="gallery-item"><img src="img/photos/20250102_191149.jpg" alt="20250102_191149"></div><div class="gallery-item"><img src="img/photos/20250105_115958.jpg" alt="20250105_115958"></div><div class="gallery-item"><img src="img/photos/20250118_110738.jpg" alt="20250118_110738"></div><div class="gallery-item"><img src="img/photos/20250119_130708.jpg" alt="20250119_130708"></div><div class="gallery-item"><img src="img/photos/20250120_132700.jpg" alt="20250120_132700"></div><div class="gallery-item"><img src="img/photos/20250209_144605.jpg" alt="20250209_144605"></div><div class="gallery-item"><img src="img/photos/20250222_162515.jpg" alt="20250222_162515"></div><div class="gallery-item"><img src="img/photos/20250223_123850.jpg" alt="20250223_123850"></div><div class="gallery-item"><img src="img/photos/20250510_160813.jpg" alt="20250510_160813"></div><div class="gallery-item"><img src="img/photos/20250511_151652.jpg" alt="20250511_151652"></div><div class="gallery-item"><img src="img/photos/20250511_152019~2.jpg" alt="20250511_152019~2"></div><div class="gallery-item"><img src="img/photos/20250525_170513.jpg" alt="20250525_170513"></div><div class="gallery-item"><img src="img/photos/20250601_124126.jpg" alt="20250601_124126"></div><div class="gallery-item"><img src="img/photos/20250719_125039.jpg" alt="20250719_125039"></div><div class="gallery-item"><img src="img/photos/IMG_20240619_170700839.jpg" alt="IMG_20240619_170700839"></div><div class="gallery-item"><img src="img/photos/VideoCapture_20250809-153707.jpg" alt="VideoCapture_20250809-153707"></div></div></div></section><footer class="footer"><div class="container"><p>&copy; 2025 Various Artists.</p></div></footer><div class="audio-player-banner" id="audioPlayerBanner"><div class="player-container"><div class="player-controls"><button class="control-btn" onclick="previousTrack()" title="Previous Track">⏮️</button> <button class="control-btn play-pause" onclick="togglePlayback()" id="playPauseBtn" title="Play/Pause">▶️</button> <button class="control-btn" onclick="nextTrack()" title="Next Track">⏭️</button></div><div class="track-info"><div class="track-title" id="trackTitle">Click to start playlist</div><div class="track-artist" id="trackArtist">Sandy & Junior</div></div><div class="progress-container"><span class="time-display" id="currentTime">0:00</span><div class="progress-bar" onclick="seekTo(event)"><div class="progress-fill" id="progressFill"></div></div><span class="time-display" id="totalTime">0:00</span></div><div class="volume-container"><button class="control-btn" onclick="toggleMute()" id="muteBtn" title="Mute/Unmute">🔊</button> <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50" onchange="setVolume(this.value)"></div><div><button class="control-btn minimise" onclick="minimise()" id="minimiseButton" title="Play/Pause">▼</button></div></div><div class="container"><div id="audioStatus"><strong>🎵 Click anywhere to start playing Sandy & Junior playlist!</strong><br><small>The player controls will appear at the top of the page</small></div></div></div><div class="maximise-container hidden" id="audioPlayerBannerMaximise"><button class="control-btn maximise" onclick="maximise()" id="maximiseButton" title="Play/Pause">▲</button></div><script>// Smooth scrolling for navigation links
+        }</style><script defer="defer" src="./js/app.js"></script></head><body><script>// Set up a modal overlay once
+      function createImageModal() {
+        const overlay = document.createElement('div');
+        overlay.className = 'img-modal-overlay';
+        overlay.setAttribute('aria-hidden', 'true');
+
+        const dialog = document.createElement('div');
+        dialog.className = 'img-modal-dialog';
+        dialog.setAttribute('role', 'dialog');
+        dialog.setAttribute('aria-modal', 'true');
+
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'img-modal-close';
+        closeBtn.type = 'button';
+        closeBtn.setAttribute('aria-label', 'Close media');
+        closeBtn.innerHTML = '&times;';
+
+        const img = document.createElement('img');
+        img.className = 'img-modal-img';
+        img.alt = '';
+
+        const video = document.createElement('video');
+        video.className = 'img-modal-video';
+        video.controls = true;
+        video.style.display = 'none';
+
+        dialog.appendChild(closeBtn);
+        dialog.appendChild(img);
+        dialog.appendChild(video);
+        overlay.appendChild(dialog);
+        document.body.appendChild(overlay);
+
+        let lastActiveEl = null;
+        let currentImageIndex = -1;
+        let galleryImages = [];
+
+        function updateGalleryImages() {
+          // Get all gallery images and videos in DOM order
+          galleryImages = Array.from(document.querySelectorAll('.gallery-item img, .gallery-item video, .gallery img, .gallery video, [data-gallery] img, [data-gallery] video'))
+            .filter(media => media.src && media.src.trim() !== '');
+        }
+
+        function openModal(src, altText = '', clickedElement = null, isVideo = false) {
+          if (!src) return;
+
+          updateGalleryImages();
+
+          // Find the index of the clicked media
+          if (clickedElement) {
+            currentImageIndex = galleryImages.findIndex(media =>
+              media === clickedElement || media.src === src
+            );
+          }
+
+          if (currentImageIndex === -1) {
+            // If not found, find by src as fallback
+            currentImageIndex = galleryImages.findIndex(media => media.src === src);
+          }
+
+          lastActiveEl = document.activeElement;
+
+          if (isVideo) {
+            // Show video, hide image
+            img.style.display = 'none';
+            video.style.display = 'block';
+            video.src = src;
+            video.load(); // Ensure video is loaded
+          } else {
+            // Show image, hide video
+            video.style.display = 'none';
+            img.style.display = 'block';
+            img.src = src;
+            img.alt = altText || '';
+          }
+
+          overlay.classList.add('open');
+          overlay.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+
+          closeBtn.focus();
+        }
+
+        function closeModal() {
+          overlay.classList.remove('open');
+          overlay.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          img.src = '';
+          video.src = '';
+          video.pause();
+          currentImageIndex = -1;
+          if (lastActiveEl && typeof lastActiveEl.focus === 'function') {
+            lastActiveEl.focus();
+          }
+        }
+
+        function showPrevImage() {
+          if (currentImageIndex <= 0) return;
+          currentImageIndex--;
+          const prevMedia = galleryImages[currentImageIndex];
+          if (prevMedia) {
+            const isVideo = prevMedia.tagName.toLowerCase() === 'video';
+            if (isVideo) {
+              img.style.display = 'none';
+              video.style.display = 'block';
+              video.src = prevMedia.src;
+              video.load();
+            } else {
+              video.style.display = 'none';
+              img.style.display = 'block';
+              img.src = prevMedia.src;
+              img.alt = prevMedia.alt || '';
+            }
+          }
+        }
+
+        function showNextImage() {
+          if (currentImageIndex >= galleryImages.length - 1) return;
+          currentImageIndex++;
+          const nextMedia = galleryImages[currentImageIndex];
+          if (nextMedia) {
+            const isVideo = nextMedia.tagName.toLowerCase() === 'video';
+            if (isVideo) {
+              img.style.display = 'none';
+              video.style.display = 'block';
+              video.src = nextMedia.src;
+              video.load();
+            } else {
+              video.style.display = 'none';
+              img.style.display = 'block';
+              img.src = nextMedia.src;
+              img.alt = nextMedia.alt || '';
+            }
+          }
+        }
+
+        // Close handlers
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', (e) => {
+          if (e.target === overlay) closeModal();
+        });
+
+        // Keyboard handlers
+        window.addEventListener('keydown', (e) => {
+          if (!overlay.classList.contains('open')) return;
+
+          switch(e.key) {
+            case 'Escape':
+              closeModal();
+              break;
+            case 'ArrowLeft':
+              e.preventDefault();
+              showPrevImage();
+              break;
+            case 'ArrowRight':
+              e.preventDefault();
+              showNextImage();
+              break;
+          }
+        });
+
+        return { openModal };
+      }
+
+      const modal = createImageModal();
+
+      // Helper: find media URL from the clicked target
+      function getMediaFromTarget(target) {
+        // Priority: data-fullsrc attribute on the clicked element or its parent link
+        const elWithData =
+          target.closest('[data-fullsrc]') ||
+          (target.closest('a') && target.closest('a').hasAttribute('data-fullsrc') ? target.closest('a') : null);
+
+        if (elWithData) {
+          return {
+            src: elWithData.getAttribute('data-fullsrc'),
+            alt: elWithData.getAttribute('alt') || target.getAttribute('alt') || '',
+            element: elWithData.querySelector('img, video') || elWithData,
+            isVideo: false // data-fullsrc typically for images
+          };
+        }
+
+        // If clicking a <video>, use its src
+        const video = target.closest('video');
+        if (video && video.src) {
+          return { src: video.src, alt: '', element: video, isVideo: true };
+        }
+
+        // If clicking an <img>, use its src as fallback
+        const img = target.closest('img');
+        if (img && img.src) {
+          return { src: img.src, alt: img.alt || '', element: img, isVideo: false };
+        }
+
+        return null;
+      }
+
+      // Event delegation: click any gallery item to open
+      document.addEventListener('click', (e) => {
+        // Limit to known gallery containers if you like (e.g., e.target.closest('.gallery'))
+        // For now, try to resolve any clicked element
+        const data = getMediaFromTarget(e.target);
+        if (!data) return;
+
+        // Only trigger if inside a gallery container or explicitly marked as gallery item
+        const isGalleryClick =
+          e.target.closest('.gallery, [data-gallery], .image-grid, .gallery-item') ||
+          e.target.matches('[data-fullsrc]');
+
+        if (!isGalleryClick) return;
+
+        e.preventDefault();
+        modal.openModal(data.src, data.alt, data.element, data.isVideo);
+      });</script><audio id="audioPlayer" preload="none"></audio><nav class="navbar"><div class="nav-container"><a href="#" class="logo">40 Years! And you've got this!</a><ul class="nav-menu"><li><a href="#home">Home</a></li><li><a href="#gallery">Gallery</a></li></ul></div></nav><section class="hero" id="home"><div class="hero-content"><img src="img/photos/heart_with_hands.jpg" alt="heart with hands" class="gallery-item"><h1>Our Dear Patricia,</h1><h1><span>Happy Birthday!</span></h1><p>We love you and wish to celebrate many more occasions with you!</p><a href="#gallery" class="cta-button">Explore Your Gallery</a></div></section><section class="gallery" id="gallery"><div class="container"><div class="section-header"><h2 class="section-title">Some of Your Memories</h2><p class="section-subtitle">Have a blast from the past with important milestones that we collected for you.</p></div><div class="gallery-grid"><div class="gallery-item"><video src="img/photos/4cac97eb-ab89-4caa-a541-9a975a323f30.mp4"/></div><div class="gallery-item"><img src="img/photos/215595917_4820441921317730_4653418642112594120_n.jpg" alt=""></div><div class="gallery-item"><img src="img/photos/5f0997c2-e387-4434-8e14-3aa4359260b6.jpeg" alt=""></div><div class="gallery-item"><img src="img/photos/669a442c-7bd9-4357-af92-0ba190adde0e.jpeg" alt=""></div><div class="gallery-item"><img src="img/photos/20211019_191953.jpg" alt="20211019_191953"></div><div class="gallery-item"><img src="img/photos/20240310_164653.jpg" alt="20240310_164653"></div><div class="gallery-item"><img src="img/photos/20240511_154136.jpg" alt="20240511_154136"></div><div class="gallery-item"><img src="img/photos/20240512_101057.jpg" alt="20240512_101057"></div><div class="gallery-item"><img src="img/photos/20240714_194509.jpg" alt="20240714_194509"></div><div class="gallery-item"><img src="img/photos/20240731_193351.jpg" alt="20240731_193351"></div><div class="gallery-item"><img src="img/photos/20240802_160642.jpg" alt="20240802_160642"></div><div class="gallery-item"><img src="img/photos/20240804_130500.jpg" alt="20240804_130500"></div><div class="gallery-item"><img src="img/photos/20240921_144149.jpg" alt="20240921_144149"></div><div class="gallery-item"><img src="img/photos/20241116_123447.jpg" alt="20241116_123447"></div><div class="gallery-item"><img src="img/photos/20241116_123514.jpg" alt="20241116_123514"></div><div class="gallery-item"><img src="img/photos/20241116_123520.jpg" alt="20241116_123520"></div><div class="gallery-item"><img src="img/photos/20250102_191149.jpg" alt="20250102_191149"></div><div class="gallery-item"><img src="img/photos/20250105_115958.jpg" alt="20250105_115958"></div><div class="gallery-item"><img src="img/photos/20250118_110738.jpg" alt="20250118_110738"></div><div class="gallery-item"><img src="img/photos/20250119_130708.jpg" alt="20250119_130708"></div><div class="gallery-item"><img src="img/photos/20250120_132700.jpg" alt="20250120_132700"></div><div class="gallery-item"><img src="img/photos/20250209_144605.jpg" alt="20250209_144605"></div><div class="gallery-item"><img src="img/photos/20250222_162515.jpg" alt="20250222_162515"></div><div class="gallery-item"><img src="img/photos/20250223_123850.jpg" alt="20250223_123850"></div><div class="gallery-item"><img src="img/photos/20250510_160813.jpg" alt="20250510_160813"></div><div class="gallery-item"><img src="img/photos/20250511_151652.jpg" alt="20250511_151652"></div><div class="gallery-item"><img src="img/photos/20250511_152019~2.jpg" alt="20250511_152019~2"></div><div class="gallery-item"><img src="img/photos/20250525_170513.jpg" alt="20250525_170513"></div><div class="gallery-item"><img src="img/photos/20250601_124126.jpg" alt="20250601_124126"></div><div class="gallery-item"><img src="img/photos/20250719_125039.jpg" alt="20250719_125039"></div><div class="gallery-item"><img src="img/photos/IMG_20240619_170700839.jpg" alt="IMG_20240619_170700839"></div><div class="gallery-item"><img src="img/photos/VideoCapture_20250809-153707.jpg" alt="VideoCapture_20250809-153707"></div></div></div></section><footer class="footer"><div class="container"><p>&copy; 2025 Various Artists.</p></div></footer><div class="audio-player-banner" id="audioPlayerBanner"><div class="player-container"><div class="player-controls"><button class="control-btn" onclick="previousTrack()" title="Previous Track">⏮️</button> <button class="control-btn play-pause" onclick="togglePlayback()" id="playPauseBtn" title="Play/Pause">▶️</button> <button class="control-btn" onclick="nextTrack()" title="Next Track">⏭️</button></div><div class="track-info"><div class="track-title" id="trackTitle">Click to start playlist</div><div class="track-artist" id="trackArtist">Sandy & Junior</div></div><div class="progress-container"><span class="time-display" id="currentTime">0:00</span><div class="progress-bar" onclick="seekTo(event)"><div class="progress-fill" id="progressFill"></div></div><span class="time-display" id="totalTime">0:00</span></div><div class="volume-container"><button class="control-btn" onclick="toggleMute()" id="muteBtn" title="Mute/Unmute">🔊</button> <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50" onchange="setVolume(this.value)"></div><div><button class="control-btn minimise" onclick="minimise()" id="minimiseButton" title="Play/Pause">▼</button></div></div><div class="container"><div id="audioStatus"><strong>🎵 Click anywhere to start playing Sandy & Junior playlist!</strong><br><small>The player controls will appear at the top of the page</small></div></div></div><div class="maximise-container hidden" id="audioPlayerBannerMaximise"><button class="control-btn maximise" onclick="maximise()" id="maximiseButton" title="Play/Pause">▲</button></div><script>// Smooth scrolling for navigation links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           anchor.addEventListener('click', function (e) {
               e.preventDefault();
